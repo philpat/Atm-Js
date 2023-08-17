@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let password = "1234";
+    let accountBalance = 100000;
+
+    let procedure = prompt(`Welcome to Tiidelab bank. Please enter your secret pin:`);
+
+    if (procedure === password) {
+      let transactionChoice = prompt(`Please select what transaction you want to perform:
+   1. Recharge
+   2. Transfer
+   3. Check balance`);
+
+      if (transactionChoice === "1") {
+        let airtimeChoice = prompt(`Please select your network:
+    1. To self
+    2. To others`);
+
+        if (airtimeChoice === "1") {
+          prompt(`Please input amount`);
+          alert("Airtime recharge successful");
+        } else if (airtimeChoice === "2") {
+          let phoneNumber = prompt("Please input phone number");
+          let amountRecharge = prompt("Please input amount");
+          alert(`You want to recharge ${amountRecharge} to ${phoneNumber}`);
+          alert("Amount recharge successful");
+        } else {
+          alert("Invalid choice");
+        }
+      } else if (transactionChoice === "2") {
+        let transfer = prompt(`1. Savings 2. Current`);
+
+        if (transfer === "1" || transfer === "2") {
+          let bankType = prompt(`Please select bank:
+      1. FCMB
+      2. Access
+      3. Gtb`);
+
+          if (bankType === "1" || bankType === "2" || bankType === "3") {
+            let amount = prompt("Input amount");
+            let accountName = prompt("Input account number");
+            alert(`You want to transfer ${amount} to ${accountName}`);
+            alert("Transfer successful");
+          } else {
+            alert("Invalid bank selection");
+          }
+        } else {
+          alert("Invalid transfer selection");
+        }
+      } else if (transactionChoice === "3") {
+        alert(`Your balance is ${accountBalance}`);
+      } else {
+        alert("Invalid transaction choice");
+      }
+    } else {
+      alert("Incorrect pin, please try again");
+    }
+
+  </script>
+</body>
+
+</html>
